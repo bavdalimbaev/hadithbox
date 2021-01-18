@@ -2,18 +2,14 @@
 
 class Book
 {
-    public static function getAllBook() {
-        $findAll = URL . '/api/book/findAll';
-        $book = json_decode(file_get_contents($findAll), true);
-
-        return $book;
-    }
+	public static function getAllBook() {
+		$findAll = URL . '/api/book/findAll';
+		return json_decode(file_get_contents($findAll), true);
+	}
 
 	public static function getBookById($bookId) {
 		$findAll = URL . '/api/book/findById/' . $bookId;
-		$book = json_decode(file_get_contents($findAll), true);
-
-		return $book;
+		return json_decode(file_get_contents($findAll), true);
 	}
 
 	public static function addBookData($params) {

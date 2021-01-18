@@ -3,12 +3,7 @@
 
 class SignController extends Helper
 {
-//	private $userIp;
-//
-//	public function __construct()
-//	{
-//		$this->userIp = $_SERVER['REMOTE_ADDR'];
-//	}
+
 	public function actionIndex()
 	{
 		if(!isset($_SESSION['CSRF'])) $_SESSION['CSRF'] = bin2hex(random_bytes(32));

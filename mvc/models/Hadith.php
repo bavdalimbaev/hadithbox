@@ -5,16 +5,12 @@ class Hadith
 {
 	public static function getAllHadith() {
 		$findAll = URL . '/api/hadith/findAll';
-		$hadith = json_decode(file_get_contents($findAll), true);
-
-		return $hadith;
+		return json_decode(file_get_contents($findAll), true);
 	}
 
 	public static function getHadithById($hadithId) {
 		$findAll = URL . '/api/hadith/findById/' . $hadithId;
-		$hadith = json_decode(file_get_contents($findAll), true);
-
-		return $hadith;
+		return json_decode(file_get_contents($findAll), true);
 	}
 
 	public static function addHadithData($params) {

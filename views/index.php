@@ -1,215 +1,408 @@
-<?php include ROOT. "/views/include/header.php";  ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Begin Page Content -->
-<div class="container-fluid mt-5 pt-4 px-0">
+  <head>
 
-	<section class="py-3 py-md-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-6 pt-3 mb-5 mb-lg-0">
-					<h1 class="font-weight-bold mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-					<div class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium sapiente a, quis earum, inventore ipsa in. Nostrum itaque tenetur quod commodi, aliquid tempora ipsum voluptatem, veritatis ut, voluptatum autem.</div>
-					<div class="mb-lg-3">
-						<a class="btn btn-primary mr-2 mb-3" href="/">Get Started Free</a>
-						<a class="btn btn-secondary mb-3" href="/">View Docs</a>
-					</div>
-				</div>
-				<div class="col-12 col-lg-6 text-center">
-					<img class="w-100 mx-auto" src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" alt="">
-				</div>
-			</div>
-		</div>
-	</section>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
 
-	<section style="background: rgba(0,0,0,.02)" class=" pt-3 pb-5 py-md-5">
-		<div class="container mb-3">
-			<h4 class="text-center">Клубы</h4>
-		</div>
+    <title>Хадисы на каждый день - HadithBox</title>
 
-		<div class="row pb-5 mx-0">
-			<div id="sportclub" class="owl-carousel owl-theme pb-3">
-				<div class="item col-12">
-					<div class="p-2 border shadow-sm rounded">
-						<div class="icon-holder text-center mx-auto mb-3">
-							<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-						</div>
-						<h5 class="mb-2">Quick and Simple</h5>
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-						<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-					</div>
-				</div>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/use/asset/css/bootstrap.min.css">
 
-				<div class="item col-12">
-					<div class="p-2 border shadow-sm rounded">
-						<div class="icon-holder text-center mx-auto mb-3">
-							<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-						</div>
-						<h5 class="mb-2">Quick and Simple</h5>
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-						<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-					</div>
-				</div>
-				<div class="item col-12">
-					<div class="p-2 border shadow-sm rounded">
-						<div class="icon-holder text-center mx-auto mb-3">
-							<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-						</div>
-						<h5 class="mb-2">Quick and Simple</h5>
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-						<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-					</div>
-				</div>
-				<div class="item col-12">
-					<div class="p-2 border shadow-sm rounded">
-						<div class="icon-holder text-center mx-auto mb-3">
-							<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-						</div>
-						<h5 class="mb-2">Quick and Simple</h5>
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-						<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-					</div>
-				</div>
-				<div class="item col-12">
-					<div class="p-2 border shadow-sm rounded">
-						<div class="icon-holder text-center mx-auto mb-3">
-							<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-						</div>
-						<h5 class="mb-2">Quick and Simple</h5>
-						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-						<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-					</div>
-				</div>
+    <link rel="stylesheet" type="text/css" href="/use/asset/css/font-awesome.css">
 
-				
-			</div>
-		</div>
+    <link rel="stylesheet" href="/use/asset/css/style.css">
 
-	</section>
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo">
+                            <img class="" src="/use/asset/images/hadithbox.jpg" alt="HadithBox"/>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="#welcome" class="active">Home</a></li>
+                            <li><a href="#features">About</a></li>
+                            <li><a href="#work-process">Work Process</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact-us">Contact Us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
 
-	<section class="bg-warning py-5">
-		<div class="container pb-5">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="h4 mb-5 text-uppercase font-weight-bold">Статистика Спортсмена</div>
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
 
-					<div id="sportman" class="owl-carousel owl-theme pb-3">
-						<div class="item row">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h1>Lorem ipsum amet <strong>contur</strong> assumenda in <strong>fugiat</strong></h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste asperiores, delectus beatae repudiandae itaque</p>
+                        <a href="#features" class="main-button-slider">Скачать программу</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
 
-							<div class="col-lg-6">
-								<div class="icon-holder text-center mx-auto mb-3">
-									<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-								</div>
-							</div>
-							<div class="col-lg-6 d-flex align-items-center">
-								<div class="p-2">
-									<h2 class="mb-2">Quick and Simple</h2>
-									<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-									<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-								</div>
-							</div>
+    <!-- ***** Features Small Start ***** -->
+    <section class="section home-feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="/use/asset/images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Lorem Ipsum</h5>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
 
-						</div>
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="/use/asset/images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Lorem Ipsum</h5>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
 
-						<div class="item row">
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                            <div class="features-small-item">
+                                <div class="icon">
+                                    <i><img src="/use/asset/images/featured-item-01.png" alt=""></i>
+                                </div>
+                                <h5 class="features-title">Lorem Ipsum</h5>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
 
-							<div class="col-lg-6">
-								<div class="icon-holder text-center mx-auto mb-3">
-									<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img" alt="...">
-								</div>
-							</div>
-							<div class="col-lg-6 d-flex align-items-center">
-								<div class="p-2">
-									<h5 class="mb-2">Quick and Simple</h5>
-									<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maxime aspernatur sit nesciunt deleniti.!</div>
-									<div class="mt-2"><a class="btn btn-primary btn-block" href="/">Learn more →</a></div>
-								</div>
-							</div>
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="/use/asset/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Lorem ipsum dolor, sit amet</h2>
+                    </div>
+                    <div class="left-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ab sint neque delectus dicta at facere et. Voluptate eveniet fuga repellendus, quos vero, perspiciatis ad perferendis corporis quas aliquid commodi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
 
-						</div>
-						
-					</div>
-				</div>
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Lorem ipsum, dolor sit amet </h2>
+                    </div>
+                    <div class="left-text">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde incidunt facere sit voluptas eius dolores ab, nisi a quas placeat, deleniti molestiae, impedit temporibus autem voluptatem, distinctio quibusdam ducimus repellat?</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="/use/asset/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
 
-				<div class="col-lg-4">
-					<div class="mb-3 d-flex justify-content-between">
-						<h4 class="text-uppercase font-weight-bold">Таблица</h4>
-						<a class="text-decoration-none" href="/">Все</a>
-					</div>
-					<div class="table">
-						<table class="table table-sm table-hover table-dark">
-							<thead class="">
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Club</th>
-									<th scope="col">Person</th>
-									<th scope="col">Dateadd</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>title club</td>
-									<td>count person</td>
-									<td>dateadd</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>title club</td>
-									<td>count person</td>
-									<td>dateadd</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td colspan="2">Larry the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-						
-					</div>
-					
-				</div>
+    <!-- ***** Home Parallax Start ***** -->
+    <section class="mini" id="work-process">
+        <div class="mini-content">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="info">
+                            <h1>Work Process</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Id impedit, asperiores repellendus rerum fugiat ea inventore</p>
+                        </div>
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</section>
+                <!-- ***** Mini Box Start ***** -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="/use/asset/images/work-process-item-01.png" alt=""></i>
+                            <strong>Get Ideas</strong>
+                            <span>Lorem ipsum, dolor, sit amet consectetur.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="/use/asset/images/work-process-item-01.png" alt=""></i>
+                            <strong>Discuss</strong>
+                            <span>Lorem ipsum, dolor, sit amet consectetur.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="/use/asset/images/work-process-item-01.png" alt=""></i>
+                            <strong>Make</strong>
+                            <span>Lorem ipsum, dolor, sit amet consectetur.</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="#" class="mini-box">
+                            <i><img src="/use/asset/images/work-process-item-01.png" alt=""></i>
+                            <strong>Test</strong>
+                            <span>Lorem ipsum, dolor, sit amet consectetur.</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Mini Box End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Home Parallax End ***** -->
 
-	<section class="py-5">
-		<div class="container">
-			<div class="row">
+    <!-- ***** Testimonials Start ***** -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <!-- ***** Section Title Start ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">Testimonials?</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Rem consequatur eos veniam ratione neque. Rem recusandae aut</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Section Title End ***** -->
 
-				<div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-					<h2 class="text-center font-weight-bold">Новости</h2>
-				</div>
+            <div class="row">
+                <!-- ***** Testimonials Item Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="team-item">
+                        <div class="team-content">
+                            <i><img src="/use/asset/images/testimonial-icon.png" alt=""></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit praesentium iure culpa aliquam quia, in.</p>
+                            <div class="user-image">
+                                <img src="http://placehold.it/60x60" alt="">
+                            </div>
+                            <div class="team-info">
+                                <h3 class="user-name">John Johnson</h3>
+                                <span>user</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***** Testimonials Item End ***** -->
+                
+                <!-- ***** Testimonials Item Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="team-item">
+                        <div class="team-content">
+                            <i><img src="/use/asset/images/testimonial-icon.png" alt=""></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit praesentium iure culpa aliquam quia, in.</p>
+                            <div class="user-image">
+                                <img src="http://placehold.it/60x60" alt="">
+                            </div>
+                            <div class="team-info">
+                                <h3 class="user-name">John Johnson</h3>
+                                <span>user</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***** Testimonials Item End ***** -->
+                
+                <!-- ***** Testimonials Item Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="team-item">
+                        <div class="team-content">
+                            <i><img src="/use/asset/images/testimonial-icon.png" alt=""></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit praesentium iure culpa aliquam quia, in.</p>
+                            <div class="user-image">
+                                <img src="http://placehold.it/60x60" alt="">
+                            </div>
+                            <div class="team-info">
+                                <h3 class="user-name">John Johnson</h3>
+                                <span>user</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***** Testimonials Item End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Testimonials End ***** -->
 
-				<div class="col-lg-12 col-sm-6">
-					<div class="card shadow rounded mb-3">
-						<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img-top p-2 border-bottom" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
+    <!-- ***** Contact Us Start ***** -->
+    <section class="section colored" id="contact-us">
+        <div class="container">
+            <!-- ***** Section Title Start ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">Talk To Us</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Natus modi unde atque nobis, porro nemo similique quas labore sequi.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Section Title End ***** -->
 
-				<div class="col-lg-12 col-sm-6">
-					<div class="card shadow rounded mb-3">
-						<img src="https://themes.3rdwavemedia.com/coderpro/bs4/2.0/assets/images/promo-figure-alt.svg" class="card-img-top p-2 border-bottom" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
+            <div class="row">
+                <!-- ***** Contact Text Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <h5 class="margin-bottom-30">Keep in touch</h5>
+                    <div class="contact-text">
+                        <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Illo dolor sed aut sit fugiat numquam sunt recusandae odio, quos at debitis qui praesentium blanditiis provident placeat maiores tempora. Aliquam, minima.</p>
+                        <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Illo dolor sed aut sit fugiat numquam sunt recusandae odio, quos at debitis qui praesentium blanditiis provident placeat maiores tempora. Aliquam, minima.</p>
+                    </div>
+                </div>
+                <!-- ***** Contact Text End ***** -->
 
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form action="" method="POST">
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" class="main-button">Send Message</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright &copy; 2020 Hadithbox.webrand.kg</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="/use/asset/js/jquery-2.1.0.min.js"></script>
 
-			</div>
-		</div>
-	</section>
+    <!-- Bootstrap -->
+    <script src="/use/asset/js/popper.js"></script>
+    <script src="/use/asset/js/bootstrap.min.js"></script>
 
-</div>
-<!-- /.container-fluid -->
+    <!-- Plugins -->
+    <script src="/use/asset/js/scrollreveal.min.js"></script>
+    <script src="/use/asset/js/waypoints.min.js"></script>
+    <script src="/use/asset/js/jquery.counterup.min.js"></script>
+    <script src="/use/asset/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="/use/asset/js/custom.js"></script>
 
-<?php include ROOT. "/views/include/footer.php";  ?>
+  </body>
+</html>

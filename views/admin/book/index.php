@@ -9,7 +9,7 @@ require_once ROOT . '/views/include/header-admin.php';
 		<h1 class="h3 mb-0 text-gray-800">Книги</h1>
 		<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 	</div>
-	<p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+	<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet at blanditiis, commodi consectetur dolor doloribus eligendi enim eos explicabo, ipsam iure, natus neque placeat quasi ratione reiciendis soluta velit!</p>
 
 	<div class="card shadow mb-4">
         <div class="card-header py-3 d-flex align-items-center justify-content-between">
@@ -52,7 +52,7 @@ require_once ROOT . '/views/include/header-admin.php';
 						<td><?=$row['description']?></td>
 						<td>
                             <a href="/admin/book/edit/<?=$row['id']?>" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
-                            <a href="/views/delete.php?id=<?=$row['id']?>&type=book" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/views/delete.php?id=<?=$row['id']?>&type=book" onclick="return confirm('Вы действительно хотите удалить?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                         </td>
 					</tr>
                     <?php endforeach; ?>

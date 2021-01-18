@@ -3,18 +3,14 @@
 
 class Category
 {
-    public static function getAllCategory() {
-        $findAll = URL . '/api/category/findAll';
-        $category = json_decode(file_get_contents($findAll), true);
-
-        return $category;
-    }
+	public static function getAllCategory() {
+		$findAll = URL . '/api/category/findAll';
+		return json_decode(file_get_contents($findAll), true);
+	}
 
 	public static function getCategoryById($catId) {
 		$findAll = URL . '/api/category/findById/' . $catId;
-		$category = json_decode(file_get_contents($findAll), true);
-
-		return $category;
+		return json_decode(file_get_contents($findAll), true);
 	}
 
 	public static function addCategoryData($params) {
