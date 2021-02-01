@@ -51,9 +51,9 @@ require_once ROOT . '/views/include/header-admin.php';
                                 </li>
                             </ul>
                             <div class="tab-content pt-2" id="myTabContent">
-	                            <?php foreach ($langList as $key => $row):
+	                            <?php foreach ($langList as $key => $langrow):
 		                            foreach ($hadithLangInfo as $kei => $rows) {
-			                            if ($rows['langId'] == $row['id']) {
+			                            if ($rows['langId'] == $langrow['id']) {
 				                            $translateId = $rows['id'];
 				                            $translateTitle = $rows['title'];
 				                            $translateDescription = $rows['description'];
@@ -62,33 +62,37 @@ require_once ROOT . '/views/include/header-admin.php';
 		                            }
 		                            ?>
 
-                                  <div class="tab-pane fade <?php echo ($key !== 0) ?: 'show active';?>" id="lang<?=$key?>" role="tabpanel" aria-labelledby="<?=$row['title']?>-tab">
-                                      <input type="text" hidden name="langId-<?=$key?>" value="<?=$row['id']?>">
+                                  <div class="tab-pane fade <?php echo ($key !== 0) ?: 'show active';?>" id="lang<?=$key?>" role="tabpanel" aria-labelledby="<?=$langrow['title']?>-tab">
+                                      <input type="text" hidden name="langId-<?=$key?>" value="<?=$langrow['id']?>">
                                       <input type="number" hidden name="translate-<?=$key?>" value="<?=$translateId?>">
+                                      <div class="form-group">
+                                          <label for="title-<?=$langrow['id']?>">Название <?=$langrow['title']?></label>
+                                          <input type="text" value="<?=$translateTitle?>" name="title-<?=$key?>" id="title-<?=$langrow['id']?>" placeholder="Введите название" class="form-control">
+                                      </div>
                                       <div class="row">
                                           <div class="col-6">
                                               <label for="book-<?=$key?>">Выберите Книгу</label>
                                               <select name="bookId-<?=$key?>" id="book-<?=$key?>" class="form-control" required>
-                                                <?php foreach ($bookList as $key => $row): ?>
-                                                    <option value="<?=$row['id']?>"><?=$row['title']?></option>
+                                                <?php foreach ($bookList as $keys => $bookrow): ?>
+                                                    <option value="<?=$bookrow['id']?>"><?=$bookrow['title']?></option>
                                                 <?php endforeach ?>
                                                   <option style="background-color: #00A000; color:#fff;" value="<?=$hadithInfo['bookId']?>" selected><?=$hadithInfo['bookTitle']?></option>
                                               </select>
                                           </div>
                                           <div class="col-6">
                                               <label for="checkbox-category-<?=$key?>">Выберите Категорию</label>
-                                              <select name="categoryId-<?=$key?>[]" id="checkbox-category-<?=$key?>" class="form-control" required multiple="multiple" style="height:70px">
-	                                              <?php foreach ($categoryList as $key => $row):
-		                                              foreach ($hadithInfo['categories'] as $kei => $rows) {
-			                                              if ($rows['id'] == $row['id']) {
-				                                              $categoryId = $rows['id'];
-				                                              $categoryTitle = $rows['title'];
+                                              <select name="categoryId<?=$key?>" id="checkbox-category-<?=$key?>" class="form-control" required multiple="multiple" style="height:70px">
+	                                              <?php foreach ($categoryList as $keys => $catrow):
+		                                              foreach ($hadithInfo['categories'] as $keis => $hadithrow) {
+			                                              if ($hadithrow['id'] == $catrow['id']) {
+				                                              $categoryId = $hadithrow['id'];
+				                                              $categoryTitle = $hadithrow['title'];
 			                                              }
 		                                              }
 		                                              if(!empty($categoryId)) { ?>
                                                       <option value="<?=$categoryId?>" selected><?=$categoryTitle?></option>
 		                                              <?php } else { ?>
-                                                      <option value="<?=$row['id']?>"><?=$row['title']?></option>
+                                                      <option value="<?=$catrow['id']?>"><?=$catrow['title']?></option>
 		                                              <?php }
 		                                              unset($categoryId); unset($categoryTitle);
 	                                              endforeach ?>
@@ -97,13 +101,10 @@ require_once ROOT . '/views/include/header-admin.php';
                                           </div>
 
                                       </div>
+
                                       <div class="form-group">
-                                          <label for="title-<?=$row['id']?>">Название <?=$row['title']?></label>
-                                          <input type="text" value="<?=$translateTitle?>" name="title-<?=$key?>" id="title-<?=$row['id']?>" placeholder="Введите название" class="form-control">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="status-<?=$row['id']?>">Статус</label>
-                                          <select name="stts-<?=$key?>" id="status-<?=$row['id']?>" class="form-control">
+                                          <label for="status-<?=$langrow['id']?>">Статус</label>
+                                          <select name="stts-<?=$key?>" id="status-<?=$langrow['id']?>" class="form-control">
                                               <option selected value="">Выберите статус</option>
                                               <option value="ENABLED">ENABLED</option>
                                               <option value="DELETED">DELETED</option>
@@ -113,8 +114,8 @@ require_once ROOT . '/views/include/header-admin.php';
                                           </select>
                                       </div>
                                       <div class="form-group">
-                                          <label for="description-<?=$row['id']?>">Описание</label>
-                                          <textarea name="description-<?=$key?>" id="description-<?=$row['id']?>" class="form-control"><?=$translateDescription?></textarea>
+                                          <label for="description-<?=$langrow['id']?>">Описание</label>
+                                          <textarea name="description-<?=$key?>" id="description-<?=$langrow['id']?>" class="form-control"><?=$translateDescription?></textarea>
                                       </div>
                                   </div>
 	                        <?php unset($translateStatus); unset($translateDescription); unset($translateTitle); unset($translateId); endforeach ?>
@@ -122,74 +123,6 @@ require_once ROOT . '/views/include/header-admin.php';
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="col-4 pl-3">
-                            <div class="form-group">
-                                <img id="photo" src="<?=$hadithInfo['imageUrl']?>" width="100" alt="Личное фото" />
-                            </div>
-                            <label for="img">Картинки</label>
-                            <div class="custom-file" id="img">
-                                <input type="file" name="imageUrl" value="<?=$hadithInfo['imageUrl']?>" class="custom-file-input" id="image" accept="image/jpeg,image/png">
-                                <label class="custom-file-label" for="image" data-browse="Просмотр">Выберите файл</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="col-12 mt-4">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                              <?php foreach ($langList as $key => $row): ?>
-                                  <li class="nav-item" role="<?=$key?>">
-                                      <a class="nav-link <?php echo ($key !== 0) ?: 'active';?>" id="lang<?=$key?>-tab" data-toggle="tab" href="#lang<?=$key?>" role="tab" aria-controls="lang<?=$key?>" aria-selected="<?php echo ($key !== 0) ? 'false' : 'true';?>"><?=$row['title']?></a>
-                                  </li>
-                              <?php endforeach ?>
-                            </ul>
-                            <div class="tab-content pt-2" id="myTabContent">
-	                            <?php foreach ($langList as $key => $row):
-			                            foreach ($hadithLangInfo as $kei => $rows) {
-				                            if ($rows['langId'] == $row['id']) {
-					                            $translateId = $rows['id'];
-					                            $translateTitle = $rows['title'];
-					                            $translateDescription = $rows['description'];
-					                            $translateStatus = $rows['status'];
-				                            }
-			                            }
-			                            ?>
-                                  <div class="tab-pane fade <?php echo ($key !== 0) ?: 'show active';?>" id="lang<?=$key?>" role="tabpanel" aria-labelledby="<?=$row['title']?>-tab">
-                                      <input type="text" hidden name="langId-<?=$key?>" value="<?=$row['id']?>">
-                                      <input type="number" hidden name="translate-<?=$key?>" value="<?=$translateId?>">
-                                      <div class="form-group">
-                                          <label for="title-<?=$row['id']?>">Название <?=$row['title']?></label>
-                                          <input value="<?=$translateTitle?>" type="text" name="title-<?=$key?>" id="title-<?=$row['id']?>" placeholder="Введите название" class="form-control">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="status-<?=$row['id']?>">Статус</label>
-                                          <select name="stts-<?=$key?>" id="status-<?=$row['id']?>" class="form-control">
-                                              <option selected value="">Выберите статус</option>
-                                              <option value="ENABLED">ENABLED</option>
-                                              <option value="DELETED">DELETED</option>
-                                              <option value="DISABLED">DISABLED</option>
-	                                          <?php echo empty($translateStatus) ?: '<option style="background-color: #00A000; color:#fff;" selected value="'.$translateStatus.'">'.$translateStatus.'</option>' ?>
-                                          </select>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="description-<?=$row['id']?>">Описание</label>
-                                          <textarea name="description-<?=$key?>" id="description-<?=$row['id']?>" class="form-control"><?=$translateDescription?></textarea>
-                                      </div>
-                                  </div>
-                                <?php unset($translateStatus); unset($translateDescription); unset($translateTitle); unset($translateId); endforeach ?>
-                            </div>
-                        </div>
-                        <hr>
                         <div class="col-4">
                             <input name="btnEdit" value="SAVE" type="submit" class="btn btn-primary btn-user btn-block">
                         </div>
@@ -208,7 +141,7 @@ require_once ROOT . '/views/include/footer-admin.php';
 ?>
 
 <script>
-    // $('#photo').hide();
+    $('#photo').hide();
     function readImgPh(input) {
         var reader = new FileReader();
         if (input.files && input.files[0]) {

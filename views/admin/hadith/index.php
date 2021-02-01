@@ -47,6 +47,7 @@ require_once ROOT . '/views/include/header-admin.php';
 	                    $hadithList         = $row['hadith'];
 	                    $hadithId           = $hadithList['id'];
 	                    $hadithStatus       = $hadithList['status'];
+	                    $hadithTranscript   = $hadithList['transcript'];
 
 	                    $hadithTranslate    = $row['translate'];
 
@@ -67,7 +68,7 @@ require_once ROOT . '/views/include/header-admin.php';
                                 </a>
                             <?php } ?>
                         </td>
-						<td><?php echo $hadithLangTitle?></td>
+						<td><?=($hadithLangTitle) ? $hadithLangTitle : $hadithTranscript;?></td>
 						<td><?=$hadithLangStatus?></td>
 						<td>
                             <a href="/admin/hadith/view/<?=$hadithId?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>

@@ -10,8 +10,8 @@ class AdminHadithController extends Helper
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
 		$hadith = Hadith::getAllHadith();
-		echo '<pre>'; var_dump($_SESSION['TOKEN']); echo '</pre>';
-		echo '<pre>'; var_dump($hadith); echo '</pre>';
+//		echo '<pre>'; var_dump($_SESSION['TOKEN']); echo '</pre>';
+//		echo '<pre>'; var_dump($hadith); echo '</pre>';
 
 		require_once ROOT . '/views/admin/hadith/index.php';
 		return true;
@@ -39,7 +39,7 @@ class AdminHadithController extends Helper
 			foreach ($langList as $key => $row){
 
 				$htmlLangBookId = 'bookId-'.$key;
-				$htmlLangCategories = 'categoryId-'.$key;
+				$htmlLangCategories = 'categoryId'.$key;
 				$htmlLangDescription = 'description-'.$key;
 				$htmlLangStatus = 'stts-'.$key;
 				$htmlLangTitle = 'title-'.$key;
@@ -107,7 +107,7 @@ class AdminHadithController extends Helper
 			$translate = $description = $stts = $title = $langId = [];
 			foreach ($langList as $key => $row){
 				$htmlLangBookId = 'bookId-'.$key;
-				$htmlLangCategories = 'categoryId-'.$key;
+				$htmlLangCategories = 'categoryId'.$key;
 				$htmlLangDescription = 'description-'.$key;
 				$htmlLangStatus = 'stts-'.$key;
 				$htmlLangTitle = 'title-'.$key;
@@ -134,16 +134,25 @@ class AdminHadithController extends Helper
 				}
 			}
 
+			$params = [
+				"imageUrl"      => $imageUrl,
+				"status"        => $status,
+				"transcript"    => $transcript,
+				"translateDto"  => $translate,   // array
+			];
+
+			echo '<pre>'; var_dump($params); echo '</pre>';
+			exit();
+
 			$params = json_encode([
 				"imageUrl"      => $imageUrl,
 				"status"        => $status,
 				"transcript"    => $transcript,
 				"translateDto"  => $translate,   // array
 			]);
-
-			$result = Hadith::setHadithDataById($hadithId, $params);
-			$code = $result['code'];
-			($code != 200) ? header('Location: /logout') : header('Location: /admin/hadith');
+//			$result = Hadith::setHadithDataById($hadithId, $params);
+//			$code = $result['code'];
+//			($code != 200) ? header('Location: /logout') : header('Location: /admin/hadith');
 		}
 
 		$messageNotify = Message::getMessageNotify();
