@@ -46,13 +46,13 @@ require_once ROOT . '/views/include/header-admin.php';
                     <?php foreach ($hadith as $key => $row):
 	                    $hadithList         = $row['hadith'];
 	                    $hadithId           = $hadithList['id'];
-	                    $hadithBookId       = $hadithList['bookId'];
-	                    $hadithBookTitle    = $hadithList['bookTitle'];
 	                    $hadithStatus       = $hadithList['status'];
-	                    $hadithCategory     = $hadithList['categories'];
 
 	                    $hadithTranslate    = $row['translate'];
 
+	                    $hadithBookId       = $hadithTranslate[0]['bookId'];
+	                    $hadithBookTitle    = $hadithTranslate[0]['bookTitle'];
+	                    $hadithCategory     = $hadithTranslate[0]['categories'];
 	                    $hadithLangTitle    = $hadithTranslate[0]['title'];
 	                    $hadithLangStatus   = $hadithTranslate[0]['status'];
 	                    $hadithLangId       = $hadithTranslate[0]['id'];

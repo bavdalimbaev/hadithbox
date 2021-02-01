@@ -14,35 +14,9 @@ require_once ROOT . '/views/include/header-admin.php';
 						</div>
 						<form class="form-row" method="POST" enctype="multipart/form-data">
                             <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label for="book">Выберите Книгу</label>
-                                        <select name="bookId" id="book" class="form-control" required>
-					                                <?php foreach ($bookList as $key => $row): ?>
-                                              <option value="<?=$row['id']?>"><?=$row['title']?></option>
-					                                <?php endforeach ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="checkbox-category">Выберите Категорию</label>
-                                        <select name="categoryId[]" id="checkbox-category" class="form-control" required multiple="multiple" style="height:70px">
-					                                <?php foreach ($categoryList as $key => $row): ?>
-                                              <option value="<?=$row['id']?>"><?=$row['title']?></option>
-					                                <?php endforeach ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="status">Статус</label>
-                                        <select name="status" id="status" class="form-control" required>
-                                            <option value="ENABLED" selected>ENABLED</option>
-                                            <option value="DELETED">DELETED</option>
-                                            <option value="DISABLED">DISABLED</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="transcript">Транскрипт</label>
-                                        <input type="text" id="transcript" name="transcript" class="form-control">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="transcript">Транскрипт</label>
+                                    <textarea name="transcript" id="transcript" rows="4" class="form-control" placeholder="Введите транскрипцию если имеется картинка"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -55,19 +29,44 @@ require_once ROOT . '/views/include/header-admin.php';
                                     <label class="custom-file-label" for="image" data-browse="Просмотр">смотреть</label>
                                 </div>
                             </div>
-							<hr>
-							<div class="col-12 mt-4">
+							<div class="col-12 mt-2">
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<?php foreach ($langList as $key => $row): ?>
 										<li class="nav-item" role="<?=$key?>">
 											<a class="nav-link <?php echo ($key !== 0) ?: 'active';?>" id="lang<?=$key?>-tab" data-toggle="tab" href="#lang<?=$key?>" role="tab" aria-controls="lang<?=$key?>" aria-selected="<?php echo ($key !== 0) ? 'false' : 'true';?>"><?=$row['title']?></a>
 										</li>
 									<?php endforeach ?>
+                                    <li class="nav-item dropdown ml-auto" role="status">
+                                        <select name="status" class="form-control" required>
+                                            <option value="ENABLED" selected>ENABLED</option>
+                                            <option value="DELETED">DELETED</option>
+                                            <option value="DISABLED">DISABLED</option>
+                                        </select>
+                                    </li>
 								</ul>
 								<div class="tab-content pt-2" id="myTabContent">
 									<?php foreach ($langList as $key => $row): ?>
 										<div class="tab-pane fade <?php echo ($key !== 0) ?: 'show active';?>" id="lang<?=$key?>" role="tabpanel" aria-labelledby="<?=$row['title']?>-tab">
 											<input type="text" hidden name="langId-<?=$key?>" value="<?=$row['id']?>">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="book-<?=$key?>">Выберите Книгу</label>
+                                                    <select name="bookId-<?=$key?>" id="book-<?=$key?>" class="form-control" required>
+                                                      <?php foreach ($bookList as $key => $row): ?>
+                                                          <option value="<?=$row['id']?>"><?=$row['title']?></option>
+                                                      <?php endforeach ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="checkbox-category-<?=$key?>">Выберите Категорию</label>
+                                                    <select name="categoryId-<?=$key?>[]" id="checkbox-category-<?=$key?>" class="form-control" required multiple="multiple" style="height:70px">
+                                                      <?php foreach ($categoryList as $key => $row): ?>
+                                                          <option value="<?=$row['id']?>"><?=$row['title']?></option>
+                                                      <?php endforeach ?>
+                                                    </select>
+                                                </div>
+
+                                            </div>
 											<div class="form-group">
 												<label for="title-<?=$row['id']?>">Название <?=$row['title']?></label>
 												<input type="text" name="title-<?=$key?>" id="title-<?=$row['id']?>" placeholder="Введите название" class="form-control">
