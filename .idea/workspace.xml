@@ -20,16 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c156d36a-13a3-4f33-b244-15566b244c68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mvc/controllers/AdminSourceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvc/models/Source.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/source/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/source/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/controllers/AdminHadithController.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/AdminHadithController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/hadith/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/hadith/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/hadith/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/hadith/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/hadith/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/hadith/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/hadith/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/hadith/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/delete.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,12 @@
       <updated>1612164193918</updated>
       <workItem from="1612164195195" duration="754000" />
       <workItem from="1612174382240" duration="363000" />
-      <workItem from="1612193758257" duration="4828000" />
+      <workItem from="1612193758257" duration="4902000" />
+      <workItem from="1612238123987" duration="11311000" />
+      <workItem from="1612250524055" duration="4000" />
+      <workItem from="1612250674998" duration="222000" />
+      <workItem from="1612284375285" duration="595000" />
+      <workItem from="1612327358919" duration="627000" />
     </task>
     <servers />
   </component>
@@ -125,6 +127,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="481" y="215" width="444" height="568" key="NewPhpClassDialog" timestamp="1612198260867">
@@ -135,5 +138,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="531" y="415" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1612198415956" />
+    <state x="245" y="222" key="run.anything.popup" timestamp="1612248148447">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="245" y="222" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1612248148447" />
   </component>
 </project>

@@ -17,13 +17,13 @@ require_once ROOT . '/views/include/header-admin.php';
 						<h6 class="m-0 font-weight-bold text-primary">Хадис</h6>
 					</div>
 					<div class="card-body">
-						<h6>Книга <span class="float-right font-weight-bold"><?=$hadithInfo['bookTitle']?></span></h6>
+						<h6>Книга <span class="float-right font-weight-bold"><?=$hadithLangInfo['bookTitle']?></span></h6>
+						<h6>Источник <span class="float-right font-weight-bold"><?=$hadithLangInfo['sourceTitle']?></span></h6>
 						<div class="d-flex justify-content-between align-items-center">
 						<h6>Категория</h6>
 							<ul class="float-right font-weight-bold">
-								<?php foreach ($hadithInfo['categories'] as $key => $val) {
-									echo '<li>'. $val['title'] .'</li>';
-								} ?>
+								<?php foreach ($hadithLangInfo['categories'] as $key => $val)
+									echo '<li>'. $val['title'] .'</li>'; ?>
 							</ul>
 						</div>
 						<h6>Статус <span class="float-right font-weight-bold"><?=$hadithInfo['status']?></span></h6>

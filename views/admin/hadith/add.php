@@ -31,9 +31,9 @@ require_once ROOT . '/views/include/header-admin.php';
                             </div>
 							<div class="col-12 mt-2">
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<?php foreach ($langList as $key => $row): ?>
-										<li class="nav-item" role="<?=$key?>">
-											<a class="nav-link <?php echo ($key !== 0) ?: 'active';?>" id="lang<?=$key?>-tab" data-toggle="tab" href="#lang<?=$key?>" role="tab" aria-controls="lang<?=$key?>" aria-selected="<?php echo ($key !== 0) ? 'false' : 'true';?>"><?=$row['title']?></a>
+									<?php foreach ($langList as $langkey => $row): ?>
+										<li class="nav-item" role="<?=$langkey?>">
+											<a class="nav-link <?=($langkey !== 0) ?: 'active';?>" id="lang<?=$langkey?>-tab" data-toggle="tab" href="#lang<?=$key?>" role="tab" aria-controls="lang<?=$langkey?>" aria-selected="<?=($langkey !== 0) ? 'false' : 'true';?>"><?=$row['title']?></a>
 										</li>
 									<?php endforeach ?>
                                     <li class="nav-item dropdown ml-auto" role="status">
@@ -45,35 +45,44 @@ require_once ROOT . '/views/include/header-admin.php';
                                     </li>
 								</ul>
 								<div class="tab-content pt-2" id="myTabContent">
-									<?php foreach ($langList as $key => $row): ?>
-										<div class="tab-pane fade <?php echo ($key !== 0) ?: 'show active';?>" id="lang<?=$key?>" role="tabpanel" aria-labelledby="<?=$row['title']?>-tab">
-											<input type="text" hidden name="langId-<?=$key?>" value="<?=$row['id']?>">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <label for="book-<?=$key?>">Выберите Книгу</label>
-                                                    <select name="bookId-<?=$key?>" id="book-<?=$key?>" class="form-control" required>
-                                                      <?php foreach ($bookList as $key => $row): ?>
-                                                          <option value="<?=$row['id']?>"><?=$row['title']?></option>
-                                                      <?php endforeach ?>
-                                                    </select>
-                                                </div>
-                                                <div class="col-6">
-                                                    <label for="checkbox-category-<?=$key?>">Выберите Категорию</label>
-                                                    <select name="categoryId-<?=$key?>[]" id="checkbox-category-<?=$key?>" class="form-control" required multiple="multiple" style="height:70px">
-                                                      <?php foreach ($categoryList as $key => $row): ?>
-                                                          <option value="<?=$row['id']?>"><?=$row['title']?></option>
-                                                      <?php endforeach ?>
-                                                    </select>
-                                                </div>
-
+									<?php foreach ($langList as $langkeys => $langrow): ?>
+										<div class="tab-pane fade <?=($langkeys !== 0) ?: 'show active';?>" id="lang<?=$langkeys?>" role="tabpanel" aria-labelledby="<?=$langrow['title']?>-tab">
+											<input type="text" hidden name="langId-<?=$langkeys?>" value="<?=$langrow['id']?>">
+                                            <div class="form-group">
+                                                <label for="title-<?=$langkeys?>">Название <?=$langrow['title']?></label>
+                                                <input type="text" name="title-<?=$langkeys?>" id="title-<?=$langkeys?>" placeholder="Введите название" class="form-control">
                                             </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <label for="book-<?=$langkeys?>">Выберите Книгу</label>
+                                                    <select name="bookId-<?=$langkeys?>" id="book-<?=$langkeys?>" class="form-control" required>
+                                                      <?php foreach ($bookList as $bookkey => $bookrow): ?>
+                                                          <option value="<?=$bookrow['id']?>"><?=$bookrow['title']?></option>
+                                                      <?php endforeach ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label for="source-<?=$langkeys?>">Выберите Источник</label>
+                                                    <select name="sourceId-<?=$langkeys?>" id="source-<?=$langkeys?>" class="form-control" required>
+                                                      <?php foreach ($sourceList as $sourcekey => $sourcerow): ?>
+                                                          <option value="<?=$sourcerow['id']?>"><?=$sourcerow['title']?></option>
+                                                      <?php endforeach ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label for="checkbox-category-<?=$langkeys?>">Выберите Категорию</label>
+                                                    <select name="categoryId-<?=$langkeys?>[]" size="2" id="checkbox-category-<?=$langkeys?>" class="form-control" multiple>
+                                                      <?php foreach ($categoryList as $catkey => $catrow): ?>
+                                                          <option value="<?=$catrow['id']?>"><?=$catrow['title']?></option>
+                                                      <?php endforeach ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+
 											<div class="form-group">
-												<label for="title-<?=$row['id']?>">Название <?=$row['title']?></label>
-												<input type="text" name="title-<?=$key?>" id="title-<?=$row['id']?>" placeholder="Введите название" class="form-control">
-											</div>
-											<div class="form-group">
-												<label for="status-<?=$row['id']?>">Статус</label>
-												<select name="stts-<?=$key?>" id="status-<?=$row['id']?>" class="form-control">
+												<label for="status-<?=$langkeys?>">Статус</label>
+												<select name="stts-<?=$langkeys?>" id="status-<?=$langkeys?>" class="form-control">
 													<option selected value="">Выберите статус</option>
 													<option value="ENABLED">ENABLED</option>
 													<option value="DELETED">DELETED</option>
@@ -81,8 +90,8 @@ require_once ROOT . '/views/include/header-admin.php';
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="description-<?=$row['id']?>">Описание</label>
-												<textarea name="description-<?=$key?>" id="description-<?=$row['id']?>" class="form-control"></textarea>
+												<label for="description-<?=$langkeys?>">Описание</label>
+												<textarea name="description-<?=$langkeys?>" id="description-<?=$langkeys?>" class="form-control"></textarea>
 											</div>
 										</div>
 									<?php endforeach ?>

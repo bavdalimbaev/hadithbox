@@ -53,10 +53,10 @@ switch ($delTp) {
 		break;
 }
 
-($result != 200) ? 'no' : header('Location: ' . $urlBack . '');
-echo '<pre>'; var_dump($result); echo '</pre>';
-echo 'noe';
-//($result != 200) ? header('Location: /logout') : header('Location: ' . $urlBack);
+//($result != 200) ? 'no' : header('Location: ' . $urlBack . '');
+//echo '<pre>'; var_dump($result); echo '</pre>';
+//echo 'noe';
+($result != 200) ? header('Location: /logout') : header('Location: ' . $urlBack);
 
 function deleteCurl($url, $delId) {
 	$header = [

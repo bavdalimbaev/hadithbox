@@ -26,6 +26,7 @@ require_once ROOT . '/views/include/header-admin.php';
 					<tr>
 						<th>№</th>
                         <th>Книга</th>
+                        <th>Источник</th>
                         <th>Категория</th>
                         <th>Хадис</th>
                         <th>Статус</th>
@@ -36,6 +37,7 @@ require_once ROOT . '/views/include/header-admin.php';
 					<tr>
                         <th>№</th>
                         <th>Книга</th>
+                        <th>Источник</th>
                         <th>Категория</th>
                         <th>Хадис</th>
                         <th>Статус</th>
@@ -53,6 +55,8 @@ require_once ROOT . '/views/include/header-admin.php';
 
 	                    $hadithBookId       = $hadithTranslate[0]['bookId'];
 	                    $hadithBookTitle    = $hadithTranslate[0]['bookTitle'];
+	                    $hadithSourceId     = $hadithTranslate[0]['sourceId'];
+	                    $hadithSourceTitle  = $hadithTranslate[0]['sourceTitle'];
 	                    $hadithCategory     = $hadithTranslate[0]['categories'];
 	                    $hadithLangTitle    = $hadithTranslate[0]['title'];
 	                    $hadithLangStatus   = $hadithTranslate[0]['status'];
@@ -61,6 +65,7 @@ require_once ROOT . '/views/include/header-admin.php';
 					<tr>
 						<td><?=++$key?></td>
 						<td><a href="/admin/book/edit/<?=$hadithBookId?>"><?=$hadithBookTitle?></a></td>
+						<td><a href="/admin/source/edit/<?=$hadithSourceId?>"><?=$hadithSourceTitle?></a></td>
 						<td>
                             <?php foreach ($hadithCategory as $kei => $val ) { ?>
                                 <a href="/admin/category/edit/<?=$val['id']?>">

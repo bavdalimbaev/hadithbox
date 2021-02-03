@@ -10,8 +10,6 @@ class AdminHadithController extends Helper
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
 		$hadith = Hadith::getAllHadith();
-//		echo '<pre>'; var_dump($_SESSION['TOKEN']); echo '</pre>';
-//		echo '<pre>'; var_dump($hadith); echo '</pre>';
 
 		require_once ROOT . '/views/admin/hadith/index.php';
 		return true;
@@ -35,32 +33,31 @@ class AdminHadithController extends Helper
 				$imageUrl = "/use/source/hadith/" . $newFileName;
 			}
 
-			$translate = $description = $stts = $title = $langId = [];
-			foreach ($langList as $key => $row){
-
-				$htmlLangBookId = 'bookId-'.$key;
-				$htmlLangCategories = 'categoryId'.$key;
-				$htmlLangDescription = 'description-'.$key;
-				$htmlLangStatus = 'stts-'.$key;
-				$htmlLangTitle = 'title-'.$key;
-				$htmlLangId = 'langId-'.$key;
+			$translate = [];
+			foreach ($langList as $key => $row) {
+				$htmlLangArray = [
+					'bookId' => 'bookId-'.$key, 'sourceId' => 'sourceId-'.$key, 'langId' => 'langId-'.$key,
+					'categoryId' => 'categoryId-'.$key, 'description' => 'description-'.$key,
+					'status' => 'stts-'.$key, 'title' => 'title-'.$key
+				];
 
 				$translateCategories = array();
-				foreach ($_POST['categoryId'] as $patent => $val) {
-					array_push($translateCategories, intval($_POST[$htmlLangCategories][$patent]));
+				foreach ($_POST[$htmlLangArray['categoryId']] as $patent => $val) {
+					array_push($translateCategories, intval($_POST[$htmlLangArray['categoryId']][$patent]));
 				}
 
-				$translateBookId = intval($_POST[$htmlLangBookId]);
-				$translateDescription = htmlspecialchars($_POST[$htmlLangDescription]);
-				$translateStatus = htmlspecialchars($_POST[$htmlLangStatus]);
-				$translateTitle = htmlspecialchars($_POST[$htmlLangTitle]);
-				$translateLangId = empty($_POST[$htmlLangTitle]) ? null : intval($_POST[$htmlLangId]);
+				$translateArray = [
+					'bookId' => intval($_POST[$htmlLangArray['bookId']]), 'sourceId' => intval($_POST[$htmlLangArray['sourceId']]),
+					'description' => htmlspecialchars($_POST[$htmlLangArray['description']]),
+					'status' => htmlspecialchars($_POST[$htmlLangArray['status']]), 'title' => htmlspecialchars($_POST[$htmlLangArray['title']]),
+					'langId' => empty($_POST[$htmlLangArray['title']]) ? null : intval($_POST[$htmlLangArray['langId']]),
+				];
 
-				if($translateTitle != null) {
+				if($translateArray['title'] != null) {
 					array_push($translate, [
-						"bookId" => $translateBookId, "categories" => $translateCategories,
-						"description" => $translateDescription, "langId" => $translateLangId,
-						"status" => $translateStatus, "title" => $translateTitle]);
+						"bookId" => $translateArray['bookId'], "sourceId" => $translateArray['sourceId'], "categories" => $translateCategories,
+						"description" => $translateArray['description'], "langId" => $translateArray['langId'],
+						"status" => $translateArray['status'], "title" => $translateArray['title']]);
 				}
 			}
 
@@ -79,6 +76,7 @@ class AdminHadithController extends Helper
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
 		$bookList = Book::getAllBook();
+		$sourceList = Source::getAllSource();
 		$categoryList = Category::getAllCategory();
 
 		require_once ROOT . '/views/admin/hadith/add.php';
@@ -86,6 +84,7 @@ class AdminHadithController extends Helper
 	}
 
 	public function actionEdit($hadithId) {
+//		print_r(array_keys(get_defined_vars()));
 
 		self::checkAdmin();
 		$hadithId = intval($hadithId);
@@ -104,45 +103,33 @@ class AdminHadithController extends Helper
 				$imageUrl = "/use/source/hadith/" . $newFileName;
 			}
 
-			$translate = $description = $stts = $title = $langId = [];
+			$translate = [];
 			foreach ($langList as $key => $row){
-				$htmlLangBookId = 'bookId-'.$key;
-				$htmlLangCategories = 'categoryId'.$key;
-				$htmlLangDescription = 'description-'.$key;
-				$htmlLangStatus = 'stts-'.$key;
-				$htmlLangTitle = 'title-'.$key;
-				$htmlLangTrId = 'translate-'.$key;
-				$htmlLangId = 'langId-'.$key;
+				$htmlLangArray = [
+					'bookId' => 'bookId-'.$key, 'sourceId' => 'sourceId-'.$key, 'langId' => 'langId-'.$key,
+					'categoryId' => 'categoryId-'.$key, 'description' => 'description-'.$key,
+					'status' => 'stts-'.$key, 'title' => 'title-'.$key, 'translate' => 'translate-'.$key
+				];
 
 				$translateCategories = array();
-				foreach ($_POST['categoryId'] as $patent => $val) {
-					array_push($translateCategories, intval($_POST[$htmlLangCategories][$patent]));
+				foreach ($_POST[$htmlLangArray['categoryId']] as $patent => $val) {
+					array_push($translateCategories, intval($_POST[$htmlLangArray['categoryId']][$patent]));
 				}
 
-				$translateBookId = intval($_POST[$htmlLangBookId]);
-				$translateDescription = htmlspecialchars($_POST[$htmlLangDescription]);
-				$translateStatus = htmlspecialchars($_POST[$htmlLangStatus]);
-				$translateTitle = htmlspecialchars($_POST[$htmlLangTitle]);
-				$translateTrId = intval($_POST[$htmlLangTrId]);
-				$translateLangId = empty($_POST[$htmlLangTitle]) ? null : intval($_POST[$htmlLangId]);
+				$translateArray = [
+					'bookId' => intval($_POST[$htmlLangArray['bookId']]), 'sourceId' => intval($_POST[$htmlLangArray['sourceId']]),
+					'description' => htmlspecialchars($_POST[$htmlLangArray['description']]), 'status' => htmlspecialchars($_POST[$htmlLangArray['status']]),
+					'title' => htmlspecialchars($_POST[$htmlLangArray['title']]), 'translate' => htmlspecialchars($_POST[$htmlLangArray['translate']]),
+					'langId' => empty($_POST[$htmlLangArray['title']]) ? null : intval($_POST[$htmlLangArray['langId']]),
+				];
 
-				if($translateTitle != null) {
+				if($translateArray['title'] != null) {
 					array_push($translate, [
-						"bookId" => $translateBookId, "categories" => $translateCategories, "id" => $translateTrId,
-						"description" => $translateDescription, "langId" => $translateLangId,
-						"status" => $translateStatus, "title" => $translateTitle]);
+						"bookId" => $translateArray['bookId'], "sourceId" => $translateArray['sourceId'], "categories" => $translateCategories,
+						"id" => $translateArray['translate'], "description" => $translateArray['description'], "langId" => $translateArray['langId'],
+						"status" => $translateArray['status'], "title" => $translateArray['title']]);
 				}
 			}
-
-			$params = [
-				"imageUrl"      => $imageUrl,
-				"status"        => $status,
-				"transcript"    => $transcript,
-				"translateDto"  => $translate,   // array
-			];
-
-			echo '<pre>'; var_dump($params); echo '</pre>';
-			exit();
 
 			$params = json_encode([
 				"imageUrl"      => $imageUrl,
@@ -150,15 +137,17 @@ class AdminHadithController extends Helper
 				"transcript"    => $transcript,
 				"translateDto"  => $translate,   // array
 			]);
-//			$result = Hadith::setHadithDataById($hadithId, $params);
-//			$code = $result['code'];
-//			($code != 200) ? header('Location: /logout') : header('Location: /admin/hadith');
+			$result = Hadith::setHadithDataById($hadithId, $params);
+
+			$code = $result['code'];
+			($code != 200) ? header('Location: /logout') : header('Location: /admin/hadith');
 		}
 
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
 		$bookList = Book::getAllBook();
 		$categoryList = Category::getAllCategory();
+		$sourceList = Source::getAllSource();
 		$hadith = Hadith::getHadithById($hadithId);
 		$hadithInfo = $hadith['hadith'];
 		$hadithLangInfo = $hadith['translate'];
