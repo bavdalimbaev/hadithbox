@@ -7,6 +7,11 @@ class Book
 		return json_decode(file_get_contents($findAll), true);
 	}
 
+	public static function getAllBookByLang($langId) {
+		$findAll = URL . '/api/book/findByLangId/' . $langId;
+		return json_decode(file_get_contents($findAll), true);
+	}
+
 	public static function getBookById($bookId) {
 		$findAll = URL . '/api/book/findById/' . $bookId;
 		return json_decode(file_get_contents($findAll), true);

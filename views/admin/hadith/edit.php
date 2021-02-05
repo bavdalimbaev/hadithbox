@@ -53,6 +53,7 @@ require_once ROOT . '/views/include/header-admin.php';
                             </ul>
                             <div class="tab-content pt-2" id="myTabContent">
 	                            <?php foreach ($langList as $langkeys => $langrow):
+                                  $langId = $langrow['id'];
 		                            foreach ($hadithLangInfo as $hadithkey => $hadithrows) {
 			                            if ($hadithrows['langId'] == $langrow['id']) {
 				                            $translateId = $hadithrows['id'];
@@ -66,6 +67,9 @@ require_once ROOT . '/views/include/header-admin.php';
 				                            $translateSourceTitle = $hadithrows['sourceTitle'];
 			                            }
 		                            }
+			                        $bookList = Book::getAllBookByLang($langId);
+			                        $categoryList = Category::getAllCategoryByLang($langId);
+			                        $sourceList = Source::getAllSourceByLang($langId);
 		                            ?>
 
                                   <div class="tab-pane fade <?=($langkeys !== 0) ?: 'show active';?>" id="lang<?=$langkeys?>" role="tabpanel" aria-labelledby="<?=$langrow['title']?>-tab">
@@ -118,8 +122,8 @@ require_once ROOT . '/views/include/header-admin.php';
                                       </div>
 
                                       <div class="form-group">
-                                          <label for="status-<?=$langrow['id']?>">Статус</label>
-                                          <select name="stts-<?=$langkeys?>" id="status-<?=$langrow['id']?>" class="form-control">
+                                          <label for="status-<?=$langId?>">Статус</label>
+                                          <select name="stts-<?=$langkeys?>" id="status-<?=$langId?>" class="form-control">
                                               <option selected value="">Выберите статус</option>
                                               <option value="ENABLED">ENABLED</option>
                                               <option value="DELETED">DELETED</option>
@@ -129,8 +133,8 @@ require_once ROOT . '/views/include/header-admin.php';
                                           </select>
                                       </div>
                                       <div class="form-group">
-                                          <label for="description-<?=$langrow['id']?>">Описание</label>
-                                          <textarea name="description-<?=$langkeys?>" id="description-<?=$langrow['id']?>" class="form-control"><?=$translateDescription?></textarea>
+                                          <label for="description-<?=$langId?>">Описание</label>
+                                          <textarea name="description-<?=$langkeys?>" id="description-<?=$langId?>" class="form-control"><?=$translateDescription?></textarea>
                                       </div>
                                   </div>
 	                        <?php unset($translateCategory); unset($translateBookTitle); unset($translateBookId);unset($translateSourceTitle); unset($translateSourceId);unset($translateStatus); unset($translateDescription); unset($translateTitle); unset($translateId); endforeach ?>

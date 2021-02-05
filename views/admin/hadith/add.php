@@ -45,7 +45,12 @@ require_once ROOT . '/views/include/header-admin.php';
                                     </li>
 								</ul>
 								<div class="tab-content pt-2" id="myTabContent">
-									<?php foreach ($langList as $langkeys => $langrow): ?>
+									<?php foreach ($langList as $langkeys => $langrow):
+                                      $langId = $langrow['id'];
+                                      $bookList = Book::getAllBookByLang($langId);
+									  $categoryList = Category::getAllCategoryByLang($langId);
+									  $sourceList = Source::getAllSourceByLang($langId);
+                                      ?>
 										<div class="tab-pane fade <?=($langkeys !== 0) ?: 'show active';?>" id="lang<?=$langkeys?>" role="tabpanel" aria-labelledby="<?=$langrow['title']?>-tab">
 											<input type="text" hidden name="langId-<?=$langkeys?>" value="<?=$langrow['id']?>">
                                             <div class="form-group">

@@ -8,6 +8,11 @@ class Category
 		return json_decode(file_get_contents($findAll), true);
 	}
 
+	public static function getAllCategoryByLang($langId) {
+		$findAll = URL . '/api/category/findByLangId/' . $langId;
+		return json_decode(file_get_contents($findAll), true);
+	}
+
 	public static function getCategoryById($catId) {
 		$findAll = URL . '/api/category/findById/' . $catId;
 		return json_decode(file_get_contents($findAll), true);

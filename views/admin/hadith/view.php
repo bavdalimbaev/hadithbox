@@ -23,7 +23,7 @@ require_once ROOT . '/views/include/header-admin.php';
 						<h6>Категория</h6>
 							<ul class="float-right font-weight-bold">
 								<?php foreach ($hadithLangInfo['categories'] as $key => $val)
-									echo '<li>'. $val['title'] .'</li>'; ?>
+									echo '<li>'. $hadithLangInfo['categories'][$key] .'</li>'; ?>
 							</ul>
 						</div>
 						<h6>Статус <span class="float-right font-weight-bold"><?=$hadithInfo['status']?></span></h6>

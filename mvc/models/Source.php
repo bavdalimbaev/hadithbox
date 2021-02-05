@@ -7,6 +7,11 @@ class Source
 		return json_decode(file_get_contents($findAll), true);
 	}
 
+	public static function getAllSourceByLang($langId) {
+		$findAll = URL . '/api/source/findByLangId/' . $langId;
+		return json_decode(file_get_contents($findAll), true);
+	}
+
 	public static function getSourceById($sourceId) {
 		$findAll = URL . '/api/source/findById/' . $sourceId;
 		return json_decode(file_get_contents($findAll), true);

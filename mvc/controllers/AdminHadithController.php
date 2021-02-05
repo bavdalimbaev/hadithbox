@@ -75,9 +75,6 @@ class AdminHadithController extends Helper
 
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
-		$bookList = Book::getAllBook();
-		$sourceList = Source::getAllSource();
-		$categoryList = Category::getAllCategory();
 
 		require_once ROOT . '/views/admin/hadith/add.php';
 		return true;
@@ -145,9 +142,6 @@ class AdminHadithController extends Helper
 
 		$messageNotify = Message::getMessageNotify();
 		$messageNotifyCount = Message::getMessageNotifyCount();
-		$bookList = Book::getAllBook();
-		$categoryList = Category::getAllCategory();
-		$sourceList = Source::getAllSource();
 		$hadith = Hadith::getHadithById($hadithId);
 		$hadithInfo = $hadith['hadith'];
 		$hadithLangInfo = $hadith['translate'];

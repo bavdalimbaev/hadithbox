@@ -68,9 +68,9 @@ require_once ROOT . '/views/include/header-admin.php';
 						<td><a href="/admin/source/edit/<?=$hadithSourceId?>"><?=$hadithSourceTitle?></a></td>
 						<td>
                             <?php foreach ($hadithCategory as $kei => $val ) { ?>
-                                <a href="/admin/category/edit/<?=$val['id']?>">
-                                    <?=$val['title']?>
-                                </a>
+                                <a href="/admin/category/edit/<?=$hadithCategory[$kei]?>">
+                                    <?=$hadithCategory[$kei]?>
+                                </a>,
                             <?php } ?>
                         </td>
 						<td><?=($hadithLangTitle) ? $hadithLangTitle : $hadithTranscript;?></td>
